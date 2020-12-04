@@ -1,0 +1,36 @@
+{% extends "layout.html" %}
+
+{% block title %}
+   SOM Network
+{% endblock %}
+
+{% block main %}
+
+
+            <div class="jumbotron">
+            <h1>SOM Network</h1>
+            </div>
+                <table style="width: 100%">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Cohort</th>
+                            <th>Hometown</th>
+                            <th>Past Industry</th>
+                            <th>Goal Industry</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for row in network %}
+                            <tr>
+                                <td> {{ row.name}} </td>
+                                <td> {{ row.cohort}} </td>
+                                <td> {{ row.hometown}} </td>
+                                <td> {{ row.past_industry}} </td>
+                                <td> {{ row.goal_industry}} </td>
+                            </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+
+{% endblock %}
