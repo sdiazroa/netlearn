@@ -1,13 +1,46 @@
 {% extends "layout.html" %}
 
 {% block title %}
-   My Network
+   Quiz
 {% endblock %}
+
+        <script>
+
+            // Run script once DOM is loaded
+            document.addEventListener('DOMContentLoaded', function() {
+
+                // Check free response submission
+                document.querySelector('#check').addEventListener('click', function() {
+                    let cohort = document.querySelector('#cohort');
+                    let hometown = document.querySelector('#hometown');
+                    if (cohort.value === 'Blue' || cohort.value === 'blue' & hometown.value === 'New Jersey') {
+                        cohort.style.backgroundColor = 'green';
+                        hometown.style.backgroundColor = 'green';
+                        document.querySelector('#answer').innerHTML = 'Correct!';
+                    } else {
+                        cohort.style.backgroundColor = 'red';
+                        document.querySelector('#answer').innerHTML = 'Incorrect';
+                    }
+                });
+
+            });
+        </script>
 
 {% block main %}
 
+        <div class="jumbotron">
+            <h1>Quiz!</h1>
+        </div>
 
-            <div class="jumbotron">
-            <h1>Quiz time</h1>
+        <div class="container">
+                <h5>Name</h5><br>
+                <h7>Lindsay Bader</h7><br><br>
+                <hr>
+                <input type="text" id="cohort" placeholder="cohort"></input>
+                <input type="text" id="hometown" placeholder="hometown"></input>
+                <input type="text" id="past" placeholder="past industry"></input>
+                <input type="text" id="goal" placeholder="goal industry"></input>
+                <button id="check">Check Answer</button>
+        </div>
 
 {% endblock %}
