@@ -2,3 +2,25 @@ cs50
 Flask
 Flask-Session
 requests
+
+CRM
+- Data already in database
+- Ability to add more data to database
+
+QUIZ
+- One person's information is pulled at a time
+- Form: Fill in the blank - one blank for each column of data
+- After submit, you can see the correct answer
+- Buttons: Submit, New Quiz and Exit
+
+Quiz Form (HTML):
+Picture (Given)
+Name (Given)
+Cohort (Fill in the blank)
+Hometown (Fill in the blank)
+Past Industry (Fill in the blank)
+Goal Industry (Fill in the blank)
+
+Quiz buttons and responses (Javascript)
+
+Main question: how do we pull data from SQL database into Javascript or Python formulas?
