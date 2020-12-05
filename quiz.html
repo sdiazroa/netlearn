@@ -1,0 +1,67 @@
+{% extends "layout.html" %}
+
+{% block title %}
+   Quiz
+{% endblock %}
+
+{% block main %}
+
+        <div class="jumbotron">
+            <h1>Quiz!</h1>
+        </div>
+
+        <div class="container">
+                <h5>Name</h5><br>
+                <h7>{{ person[0].name }}</h7><br><br>
+                <hr>
+                <input type="text" id="cohort" placeholder="cohort"></input>
+                <input type="text" id="hometown" placeholder="hometown"></input>
+                <input type="text" id="past" placeholder="past industry"></input>
+                <input type="text" id="goal" placeholder="goal industry"></input>
+                <button id="check">Check Answer</button>
+        </div>
+
+        <script>
+
+            // Run script once DOM is loaded
+            document.addEventListener('DOMContentLoaded', function() {
+
+                // Check free response submission
+                document.querySelector('#check').addEventListener('click', function() {
+                    // Check Cohort
+                    let cohort = document.querySelector('#cohort');
+                    if (cohort.value === 'Test') {
+                        cohort.style.backgroundColor = 'green';
+                    } else {
+                        cohort.style.backgroundColor = 'red';
+                    }
+
+                    // Check Hometown
+                    let hometown = document.querySelector('#hometown');
+                    if (hometown.value === 'Test') {
+                        hometown.style.backgroundColor = 'green';
+                    } else {
+                        hometown.style.backgroundColor = 'red';
+                    }
+
+                    // Check Past Industry
+                    let past = document.querySelector('#past');
+                    if (past.value === 'Test') {
+                        past.style.backgroundColor = 'green';
+                    } else {
+                        past.style.backgroundColor = 'red';
+                    }
+
+                    // Check Goal industry
+                    let goal = document.querySelector('#goal');
+                    if (goal.value === 'Test') {
+                        goal.style.backgroundColor = 'green';
+                    } else {
+                        goal.style.backgroundColor = 'red';
+                    }
+                });
+            });
+        </script>
+
+{% endblock %}
+

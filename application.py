@@ -139,7 +139,9 @@ def add_info():
 @app.route("/quiz", methods=["GET", "POST"])
 @login_required
 def quiz():
-     return render_template("quiz.html")
+     person = db.execute("SELECT * FROM network ORDER BY RANDOM() LIMIT 1;")
+     print(person)
+     return render_template("quiz.html", person = person)
 
 
 @app.route("/logout")
