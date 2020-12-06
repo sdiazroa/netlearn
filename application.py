@@ -141,7 +141,7 @@ def add_info():
 def quiz():
      person = db.execute("SELECT * FROM network ORDER BY RANDOM() LIMIT 1;")
      print(person)
-     return render_template("quiz.html", person = person)
+     return render_template("quiz.html", person = person[0])
 
 
 @app.route("/logout")
