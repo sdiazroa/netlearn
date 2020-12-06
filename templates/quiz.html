@@ -19,6 +19,9 @@
                 <input type="text" id="past" placeholder="past industry" name="{{person.past_industry}}"></input>
                 <input type="text" id="goal" placeholder="goal industry" name="{{person.goal_industry}}"></input>
                 <button id="check">Check Answer</button>
+                <button id="answers">Display Answer</button><br><br>
+
+                <p id="answer" name="{{person.cohort}}"></p>
         </div>
 
         <script>
@@ -26,12 +29,19 @@
             // Run script once DOM is loaded
             document.addEventListener('DOMContentLoaded', function() {
 
+                // Display the answer
+                document.querySelector('#answers').addEventListener('click', function() {
+                    let cohortans = document.querySelector('#answer');
+                    document.querySelector('#answer').innerHTML = answer.name;
+                });
+
                 // Check free response submission
                 document.querySelector('#check').addEventListener('click', function() {
 
+
                     // Check Cohort
                     let cohort = document.querySelector('#cohort');
-                    if (cohort.value === cohort.name) {
+                    if (cohort.value.toUpperCase() === cohort.name.toUpperCase()) {
                         cohort.style.backgroundColor = 'green';
                     } else {
                         cohort.style.backgroundColor = 'red';
@@ -39,7 +49,7 @@
 
                     // Check Hometown
                     let hometown = document.querySelector('#hometown');
-                    if (hometown.value === hometown.name) {
+                    if (hometown.value.toUpperCase() === hometown.name.toUpperCase()) {
                         hometown.style.backgroundColor = 'green';
                     } else {
                         hometown.style.backgroundColor = 'red';
@@ -47,7 +57,7 @@
 
                     // Check Past Industry
                     let past = document.querySelector('#past');
-                    if (past.value === past.name) {
+                    if (past.value.toUpperCase() === past.name.toUpperCase()) {
                         past.style.backgroundColor = 'green';
                     } else {
                         past.style.backgroundColor = 'red';
@@ -55,7 +65,7 @@
 
                     // Check Goal industry
                     let goal = document.querySelector('#goal');
-                    if (goal.value === goal.name) {
+                    if (goal.value.toUpperCase() === goal.name.toUpperCase()) {
                         goal.style.backgroundColor = 'green';
                     } else {
                         goal.style.backgroundColor = 'red';
