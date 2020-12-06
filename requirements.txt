@@ -24,3 +24,4 @@ Goal Industry (Fill in the blank)
 Quiz buttons and responses (Javascript)
 
 Main question: how do we pull data from SQL database into Javascript or Python formulas?
+

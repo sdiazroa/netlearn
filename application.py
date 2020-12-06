@@ -135,7 +135,6 @@ def add_info():
     else:
         return render_template("add_info.html", cohorts = COHORTS)
 
-# this is a test on line 138
 @app.route("/quiz", methods=["GET", "POST"])
 @login_required
 def quiz():
