@@ -35,7 +35,7 @@ db = SQL("sqlite:///crm.db")
 
 #Define Cohorts
 COHORTS = [
-
+#penisTEST
     "Blue",
     "Red",
     "Silver",
