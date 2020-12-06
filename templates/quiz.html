@@ -47,7 +47,7 @@
             document.addEventListener('DOMContentLoaded', function() {
 
                 // Check free response submission
-                document.querySelector('#check').addEventListener('click', function() {
+                document.querySelector('#check').addEventListener('click', function(check) {
 
                     // Check Cohort
                     let cohort = document.querySelector('#cohort');
@@ -83,7 +83,7 @@
                 });
 
                 // Display the answer
-                document.getElementById("AnswerButton").addEventListener("click", function(button) {
+                document.getElementById("AnswerButton").addEventListener("click", function(display) {
                    if (document.getElementById("AnswerTable").style.display === "none") {
                         document.getElementById("AnswerTable").style.display = "block";
                    } else {
