@@ -12,12 +12,12 @@
 
         <div class="container">
                 <h5>Name</h5><br>
-                <h7>{{ person[0].name }}</h7><br><br>
+                <h7>{{ person.name }}</h7><br><br>
                 <hr>
-                <input type="text" id="cohort" placeholder="cohort"></input>
-                <input type="text" id="hometown" placeholder="hometown"></input>
-                <input type="text" id="past" placeholder="past industry"></input>
-                <input type="text" id="goal" placeholder="goal industry"></input>
+                <input type="text" id="cohort" placeholder="cohort" name="{{person.cohort}}"></input>
+                <input type="text" id="hometown" placeholder="hometown" name="{{person.hometown}}"></input>
+                <input type="text" id="past" placeholder="past industry" name="{{person.past_industry}}"></input>
+                <input type="text" id="goal" placeholder="goal industry" name="{{person.goal_industry}}"></input>
                 <button id="check">Check Answer</button>
         </div>
 
@@ -28,9 +28,10 @@
 
                 // Check free response submission
                 document.querySelector('#check').addEventListener('click', function() {
+
                     // Check Cohort
                     let cohort = document.querySelector('#cohort');
-                    if (cohort.value === 'Test') {
+                    if (cohort.value === cohort.name) {
                         cohort.style.backgroundColor = 'green';
                     } else {
                         cohort.style.backgroundColor = 'red';
@@ -38,7 +39,7 @@
 
                     // Check Hometown
                     let hometown = document.querySelector('#hometown');
-                    if (hometown.value === 'Test') {
+                    if (hometown.value === hometown.name) {
                         hometown.style.backgroundColor = 'green';
                     } else {
                         hometown.style.backgroundColor = 'red';
@@ -46,7 +47,7 @@
 
                     // Check Past Industry
                     let past = document.querySelector('#past');
-                    if (past.value === 'Test') {
+                    if (past.value === past.name) {
                         past.style.backgroundColor = 'green';
                     } else {
                         past.style.backgroundColor = 'red';
@@ -54,7 +55,7 @@
 
                     // Check Goal industry
                     let goal = document.querySelector('#goal');
-                    if (goal.value === 'Test') {
+                    if (goal.value === goal.name) {
                         goal.style.backgroundColor = 'green';
                     } else {
                         goal.style.backgroundColor = 'red';
