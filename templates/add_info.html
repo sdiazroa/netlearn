@@ -13,11 +13,10 @@
             <div class="section">
 
                 <h2>Skip this step if you've already completed this form</h2><br>
-                <form action ="/register" method ="post">
+                <form action ="/add_info" method ="post">
                     <input autcomplete = "off" autofocus name = "name" placeholder = "Name" type = "text">
                     <select name="cohort">
                         <option value="">Cohort</option>
-                        <option disabled selectd value="">Cohort</option>
                         {% for cohort in cohorts %}
                         <option value ="{{ cohort }}">{{ cohort }}</option>
                         {% endfor %}
