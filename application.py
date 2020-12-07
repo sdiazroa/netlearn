@@ -55,10 +55,18 @@ def create_account():
         username = request.form.get("username")
         password = request.form.get("password")
         confirmation = request.form.get("confirmation")
+        domain = username.split("@")
+        print(len(domain))
+        print(domain[0])
+        print(domain[1])
+
 
         # check that user has completed all fields
         if not username or not password or not confirmation:
             return apology("Please complete all fields")
+
+        if "@" not in username:
+            return apology("Please enter a proper email")
 
         # checks if username is taken and returns error message
         users = db.execute("SELECT * FROM users WHERE username = ?", username)
