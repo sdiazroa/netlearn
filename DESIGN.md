@@ -11,6 +11,7 @@ Our website uses the Flask framework and leverages bootstrap for designs similar
 **Create Account, Add Info, SOM Network** 
 
 The create account page has a number of validations that can be found in line 61-80 of application.py. Noteworthy the use of .count and split which collectively check to ensure that the email entered is valid and that it is in fact a yale.edu account. Appropriate user messages for each case are displayed via the apology found under each validation to help keep the user on track. These validations ensure that the right users do and don’t have access.  
+
 To input user data into the SOM network, we used Python to query (request.form.get) and save user input. We then stored user input into our Network table in SQL. To see Python and SQL code in detail, reference lines 121-136 of application.py. The HTML for the user input page is saved in add_info.html. In between {% block main %} and {% endblock %}, you can see the code used to display the Add Info form. Most code is HTML, although we employed Jinja to display the drop-down menu options for cohorts that users can select from, since there is a finite list of cohorts to choose from. (List of cohorts stored in lines 23-47 of application.py.)
 SOM_network.html and lines 136-137 of application.py feature the code used to display the results of user input from the Add Info page. SOM_Network.html uses HTML to display the table headers and Jinja to loop through the SQL table rows and display data from each row.
 Quiz
