@@ -55,18 +55,20 @@ def create_account():
         username = request.form.get("username")
         password = request.form.get("password")
         confirmation = request.form.get("confirmation")
-        domain = username.split("@")
-        print(len(domain))
-        print(domain[0])
-        print(domain[1])
+        email_split = username.split("@")
 
 
         # check that user has completed all fields
         if not username or not password or not confirmation:
             return apology("Please complete all fields")
 
-        if "@" not in username:
+        # checks that user email is actually an email
+        if username.count("@") != 1:
             return apology("Please enter a proper email")
+
+        # checks specifically that email is yale.edu
+        if email_split[1] != "yale.edu":
+            return apology("Please enter a yale.edu email address")
 
         # checks if username is taken and returns error message
         users = db.execute("SELECT * FROM users WHERE username = ?", username)
