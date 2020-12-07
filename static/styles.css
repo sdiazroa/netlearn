@@ -37,9 +37,6 @@ main .form-control
 
 main
 {
-    /* Scroll horizontally as needed */
-    overflow-x: auto;
-
     /* Center contents */
     text-align: center;
 }
@@ -48,4 +45,9 @@ main img
 {
     /* Constrain images on small screens */
     max-width: 100%;
+}
+
+.table {
+    margin-left: 20%;
+    margin-right: auto;
 }
