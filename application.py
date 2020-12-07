@@ -124,6 +124,8 @@ def login():
 @app.route("/")
 @login_required
 def SOM_network():
+
+    #Display SOM Network page to user (diplay Network table from CRM database)
     network = db.execute("SELECT * FROM network")
     return render_template("SOM_network.html", network = network)
 
@@ -132,6 +134,7 @@ def SOM_network():
 @login_required
 def add_info():
 
+    #Capture input from user on Add Info page and save inputs into Network Table of CRM database
     if request.method == "POST":
         name = request.form.get("name")
         cohort = request.form.get("cohort")
@@ -142,6 +145,7 @@ def add_info():
         db.execute("INSERT INTO network (name, cohort, hometown, past_industry, goal_industry) VALUES (?, ?, ?, ?, ?)", name, cohort, hometown, past_industry, goal_industry)
         return redirect("/")
 
+    #Display Add Info page
     else:
         return render_template("add_info.html", cohorts = COHORTS)
 
