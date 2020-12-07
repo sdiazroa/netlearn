@@ -7,7 +7,7 @@
 {% block main %}
 
         <div class="jumbotron">
-            <h1>Quiz!</h1>
+            <h1>Quiz Time!</h1>
         </div>
 
         <div class="container">
@@ -20,16 +20,16 @@
                 <input type="text" id="goal" placeholder="goal industry" name="{{person.goal_industry}}"></input><br><br>
                 <button id="check">Check Answer</button>
                 <button id="AnswerButton">Display Answer</button>
-                <button id="New">New</button>
-                <button id="Done">Done</button><br><br>
+                <button id="New" onclick="location.href = '/quiz';">New</button>
+                <button id="Done" onclick="location.href = '/';">Done</button><br><br>
 
-                <table  id="AnswerTable" style="display:none" width="100%" cellpadding="1" cellspacing="0" border="3">
+                <table  id="AnswerTable" style="display:none" width="100%">
                     <thead>
                         <tr align="center">
-                            <th align="center">Cohort</th>
-                            <th align="center">Hometown</th>
-                            <th align="center">Past Industry</th>
-                            <th align="center">Goal Industry</th>
+                            <th align="center" style="width:15%">Cohort</th>
+                            <th align="center" style="width:25%">Hometown</th>
+                            <th align="center" style="width:30%">Past Industry</th>
+                            <th align="center" style="width:30%">Goal Industry</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -54,33 +54,33 @@
                     // Check Cohort
                     let cohort = document.querySelector('#cohort');
                     if (cohort.value.toUpperCase() === cohort.name.toUpperCase()) {
-                        cohort.style.backgroundColor = 'green';
+                        cohort.style.backgroundColor = '#7EC26E';
                     } else {
-                        cohort.style.backgroundColor = 'red';
+                        cohort.style.backgroundColor = '#EE5D3E';
                     }
 
                     // Check Hometown
                     let hometown = document.querySelector('#hometown');
                     if (hometown.value.toUpperCase() === hometown.name.toUpperCase()) {
-                        hometown.style.backgroundColor = 'green';
+                        hometown.style.backgroundColor = '#7EC26E';
                     } else {
-                        hometown.style.backgroundColor = 'red';
+                        hometown.style.backgroundColor = '#EE5D3E';
                     }
 
                     // Check Past Industry
                     let past = document.querySelector('#past');
                     if (past.value.toUpperCase() === past.name.toUpperCase()) {
-                        past.style.backgroundColor = 'green';
+                        past.style.backgroundColor = '#7EC26E';
                     } else {
-                        past.style.backgroundColor = 'red';
+                        past.style.backgroundColor = '#EE5D3E';
                     }
 
                     // Check Goal industry
                     let goal = document.querySelector('#goal');
                     if (goal.value.toUpperCase() === goal.name.toUpperCase()) {
-                        goal.style.backgroundColor = 'green';
+                        goal.style.backgroundColor = '#7EC26E';
                     } else {
-                        goal.style.backgroundColor = 'red';
+                        goal.style.backgroundColor = '#EE5D3E';
                     }
                 });
 
@@ -92,6 +92,16 @@
                         document.getElementById("AnswerTable").style.display = "none";
                    }
                 });
+
+                // Refresh Quiz when user clicks on New Button
+                document.getElementById("New").onclick = function () {
+                location.href = "/quiz";
+                };
+
+                // Take user back to Network page when user licks on Done Button
+                document.getElementById("Done").onclick = function () {
+                location.href = "/";
+                };
 
             });
         </script>
