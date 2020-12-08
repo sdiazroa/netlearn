@@ -1,5 +1,7 @@
 **Welcome to NetLearn!**
 
+See our video demo here: https://youtu.be/WKDuJRYh23o
+
 NetLearn is a digital networking platform designed by and for Yale School of Management (SOM) students. The platform allows all Yale SOM students to join a digital network where they can share personal information and learn about their peers.To run NetLearn, please open our submitted NetLearn folder in your IDE. In your IDE, cd into the NetLearn folder and run flask run. With this command, a link to our site should appear. Click on the link to navigate to the NetLearn page.
 
 Upon opening our site, the first page you should see is a login page. If you are an existing user, you can simply enter your email and password here. You may use our test account with username “Lindsay@yale.edu” and password “Test” to enter the site without creating an account. If you’d like to create an account, click the Create Account link in the nav bar and enter a valid email and password. Emails must end in yale.edu. Once you have created a username and password, you will automatically be logged into our site and lang on our homepage which is the SOM Network page. 
